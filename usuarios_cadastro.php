@@ -53,7 +53,9 @@ if (isset($_GET['edit'])) {
     </form>
 
     <h2>Usuários Cadastrados</h2>
-    <table border="1">
+    <div class="container mt-3">
+  <h2>Dark Striped Table</h2>
+  <table class="table table-dark table-striped">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -75,6 +77,7 @@ if (isset($_GET['edit'])) {
             </tr>
         <?php endforeach; ?>
     </table>
+        </div>
     <?php include 'footer.php'; ?>
 </body>
 </html>
