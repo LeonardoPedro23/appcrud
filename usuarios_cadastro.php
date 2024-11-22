@@ -54,11 +54,11 @@ if (isset($_GET['edit'])) {
 
     <h2>Usuários Cadastrados</h2>
     <div class="container mt-3">
-  <h2>Dark Striped Table</h2>
   <table class="table table-dark table-striped">
         <tr>
             <th>ID</th>
             <th>Nome</th>
+            <th>Senha</th>
             <th>Telefone</th>
             <th>Email</th>
             <th>Ações</th>
@@ -68,8 +68,10 @@ if (isset($_GET['edit'])) {
             <tr>
                 <td><?php echo $user['id']; ?></td>
                 <td><?php echo $user['nome']; ?></td>
+                <td><?php echo $user['senha']; ?></td>
                 <td><?php echo $user['telefone']; ?></td>
                 <td><?php echo $user['email']; ?></td>
+                
                 <td>
                     <a href="?edit=<?php echo $user['id']; ?>">Editar</a>
                     <a href="?delete=<?php echo $user['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>

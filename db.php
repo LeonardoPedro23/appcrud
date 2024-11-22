@@ -1,13 +1,13 @@
 <?php
-$servername = "localhost"; // ou o endereço do seu servidor
-$username = "root"; // padrão do XAMPP
-$password = "Root123"; // senha em branco
-$dbname = "sistema"; // substitua pelo nome do seu banco de dados
+$servername = "localhost"; // Altere conforme necessário
+$username = "root"; // Altere conforme necessário
+$password = "Root123"; // Altere conforme necessário
+$dbname = "sistema"; // Altere conforme necessário
 
-// Cria a conexão
+// Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verifica a conexão
+// Verificar conexão
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
