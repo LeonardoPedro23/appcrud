@@ -59,7 +59,7 @@ if (isset($_GET['edit'])) {
 
     <div class="form-group">
         <label for="valorunitario">Valor Unitário:</label>
-        <input type="number" id="valorunitario" name="valorunitario" value="<?php echo isset($produtoParaEditar['valorunitario']) ? $produtoParaEditar['valorunitario'] : ''; ?>" required class="form-control" style="width: 300px;">
+        <input type="number" step="0.01" id="valorunitario" name="valorunitario" value="<?php echo isset($produtoParaEditar['valorunitario']) ? $produtoParaEditar['valorunitario'] : ''; ?>" required class="form-control" style="width: 300px;">
     </div>
 
     <div class="form-group">
@@ -87,6 +87,8 @@ if (isset($_GET['edit'])) {
             <th>Marca</th>
             <th>Modelo</th>
             <th>Valor Unitário</th>
+            <th>Categoria</th>
+            <th>Imagem</th>
             <th>Ações</th>
         </tr>
         <?php foreach ($produtos as $produto): ?>
@@ -97,10 +99,10 @@ if (isset($_GET['edit'])) {
             <td><?php echo $produto['modelo']; ?></td>
             <td><?php echo $produto['valorunitario']; ?></td>
             <td><?php echo $produto['categoria']; ?></td>
-            <img src="<?php echo $produto['url_img']; ?>" alt="Imagens do produto" style="width: 100px;">
+            <td><img src="<?php echo $produto['url_img']; ?>" alt="Imagens do produto" style="width: 100px;"></td>
             <td>
-                <a href="?edit=<?php echo $produto['id']; ?>">Editar</a>
-                <a href="?delete=<?php echo $produto['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                <a href="?edit=<?php echo $produto['id']; ?>" class="btn btn-warning">Editar</a>
+                <a href="?delete=<?php echo $produto['id']; ?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
             </td>
         </tr>
         <?php endforeach; ?>

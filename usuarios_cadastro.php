@@ -47,9 +47,9 @@ if (isset($_GET['edit'])) {
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required><br><br>
         
-        <button type="submit" name="save">Salvar</button>
-        <button type="submit" name="update">Atualizar</button>
-        <button type="button" onclick="clearForm()">Novo</button>
+        <button type="submit" class="btn btn-success" name="save">Salvar</button>
+        <button type="submit" class="btn btn-warning" name="update">Atualizar</button>
+        <button type="button" class="btn btn-info" onclick="clearForm()">Novo</button>
     </form>
 
     <h2>Usuários Cadastrados</h2>
@@ -73,8 +73,8 @@ if (isset($_GET['edit'])) {
                 <td><?php echo $user['email']; ?></td>
                 
                 <td>
-                    <a href="?edit=<?php echo $user['id']; ?>">Editar</a>
-                    <a href="?delete=<?php echo $user['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                    <a href="?edit=<?php echo $user['id']; ?>" class="btn btn-danger">Editar</a>
+                    <a href="?delete=<?php echo $user['id']; ?>" class="btn btn-primary" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>
